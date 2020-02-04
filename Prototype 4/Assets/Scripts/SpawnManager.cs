@@ -9,8 +9,15 @@ public class SpawnManager : MonoBehaviour
     private float spawnRange = 9.0f;
     void Start()
     {
-        
-        Instantiate(enemyPrefab,GenerateSpawnPos(), enemyPrefab.transform.rotation);
+        SpawnEnemyWave(3);
+    }
+
+    private void SpawnEnemyWave(int enemiesToSpawn)
+    {
+        for(int i = 0; i < enemiesToSpawn; i++)
+        {
+            Instantiate(enemyPrefab, GenerateSpawnPos(), enemyPrefab.transform.rotation);
+        }
     }
 
     private Vector3 GenerateSpawnPos()
