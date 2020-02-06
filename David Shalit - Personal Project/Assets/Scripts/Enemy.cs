@@ -17,4 +17,12 @@ public class Enemy : MonoBehaviour
     {
         enemyRb.AddForce(Vector3.forward * -speed);
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Bounds")
+        {
+            Destroy(gameObject);
+        }
+    }
 }
